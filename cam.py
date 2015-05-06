@@ -31,7 +31,10 @@ class Camera(threading.Thread):
         conn, addr = self.camera_socket.accept()
         try:
             while(self.runFlag):
-                data = conn.recv(10240)
+                data = conn.recv(1024000)
+                if(len(data) == 0):
+                    logging.info("FFMPEG closes the conncection!")
+                    break;
                 print(len(data))
         except:
             self.runFlag = False
