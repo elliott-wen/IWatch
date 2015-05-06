@@ -19,7 +19,6 @@ def main():
     except:
         pass
     finally:
-        runFlag = False
         watchdog.kill_ffmpeg()
         cam.stop_camera()
         logging.info("Ready to shutdown!")
