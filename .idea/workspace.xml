@@ -77,8 +77,8 @@
       <file leaf-file-name="ffmpeg.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ffmpeg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8714044" vertical-offset="55" max-vertical-offset="798">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="31" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.8071066" vertical-offset="36" max-vertical-offset="779">
+              <caret line="27" column="70" selection-start-line="27" selection-start-column="70" selection-end-line="27" selection-end-column="70" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -505,7 +505,13 @@
       <option name="project" value="LOCAL" />
       <updated>1430921413978</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fix a bug">
+      <created>1430921520989</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1430921520989</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -809,8 +815,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ffmpeg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8714044" vertical-offset="55" max-vertical-offset="798">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="31" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.8071066" vertical-offset="36" max-vertical-offset="779">
+          <caret line="27" column="70" selection-start-line="27" selection-start-column="70" selection-end-line="27" selection-end-column="70" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>
