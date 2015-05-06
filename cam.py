@@ -20,7 +20,7 @@ class Camera(threading.Thread):
         except OSError:
             pass
         self.camera_socket.bind(Config.CAMERA_SOCKET)
-        self.listen(1)
+        self.camera_socket.listen(1)
         self.runFlag = True
         self.start()
 
