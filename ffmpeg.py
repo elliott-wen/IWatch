@@ -28,7 +28,9 @@ class FFMPEG_Watchdog(threading.Thread):
                         '-r','15','-f',Config.FFMPEG_RTMP_OUTPUT,
                         '-map','0:0','-f','rawvideo','-r','1','unix://'+Config.CAMERA_SOCKET
                         ]
+
         logging.info("Starting FFMPEG")
+        print(command)
         subprocess.call(command)
         logging.info("FFMPEG ends!")
 
