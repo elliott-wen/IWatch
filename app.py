@@ -7,7 +7,7 @@ def main():
     logging.basicConfig(level = logging.INFO, format = '%(asctime)s - %(levelname)s: %(message)s')
     cam = Camera()
     cam.open_camera()
-    watchdog = FFMPEG_Watchdog
+    watchdog = FFMPEG_Watchdog()
     watchdog.kill_ffmpeg()
     watchdog.start_ffmpeg()
     runFlag = True
