@@ -29,11 +29,6 @@ class Camera(threading.Thread):
 
     def run(self):
         conn = self.camera_socket.accept()
-        try:
-            while(self.runFlag):
-                data = conn.recv(10240)
-                print(len(data))
-        except:
-            self.runFlag = False
-            logging.error("Something wrong with the camera socket!")
-        logging.info("Camera Thread stops!")
+        while(self.runFlag):
+            data = conn.recv(10240)
+            print(len(data))
