@@ -4,7 +4,7 @@ import socket
 import os
 from config import Config
 import threading
-import cv
+import numpy as np
 import cv2
 import logging
 import traceback
@@ -49,7 +49,4 @@ class Camera(threading.Thread):
         logging.info("Camera Thread stops!")
 
     def process_image(self, data):
-        image = cv.CreateMat(Config.FFMPEG_FRAME_WIDTH,Config.FFMPEG_FRAME_HEIGHT,cv.CV_8UC2)
-        cv.SetData(image,data)
-        grayImage = cv2.cvtColor(image,cv.CV_YCrCb2BGR)
-        cv2.imwrite('/tmp/test.jpg,',grayImage)
+        pass

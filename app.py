@@ -9,12 +9,13 @@ def main():
     cam.open_camera()
     watchdog = FFMPEG_Watchdog()
     watchdog.kill_ffmpeg()
-    #watchdog.start_ffmpeg()
+    watchdog.start_ffmpeg()
+    time.sleep(1)
     runFlag = True
     try:
         while runFlag:
             time.sleep(1)
-            if(cam.isAlive() == False):
+            if(cam.isAlive() == False or watchdog.isAlive()):
                 break
     except:
         pass
