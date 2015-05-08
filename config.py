@@ -1,7 +1,7 @@
 class Config():
      CAMERA_SOCKET = '/tmp/camera.socket'
      FFMPEG_BIN = 'ffmpeg'
-     FFMPEG_RTMP_OUTPUT = 'rtmp://127.0.0.1:25009/webcam/live'
+     FFMPEG_RTMP_OUTPUT = 'rtmp://localhost:25009/webcam/live'
      FFMPEG_PERFRAME_SIZE = 614400
      FFMPEG_FRAME_WIDTH = 640
      FFMPEG_FRAME_HEIGHT = 480
