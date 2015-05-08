@@ -24,6 +24,6 @@ class FFMPEG_Watchdog(threading.Thread):
         nullFile = open('/dev/null','w')
         logging.info("Starting FFMPEG")
         print(Config.FFMPEG_COMMAND)
-        subprocess.call(Config.FFMPEG_COMMAND,stdout=nullFile)
+        subprocess.call(Config.FFMPEG_COMMAND,stdout=nullFile,stdin=nullFile)
         logging.info("FFMPEG ends!")
 
