@@ -32,26 +32,26 @@ class DropboxStorage(threading.Thread):
                 if '.flv' in ele:
                     if os.access(ele,os.R_OK|os.W_OK):
                         self.check_quota()
-                        self.log.info('Ready to upload file %s' % ele)
+                        logging.info('Ready to upload file %s' % ele)
                         try:
                             with open(ele,'rb') as file:
                                 self.client.put_file(ele,file)
-                                self.log.info('Uploaded %s' % ele)
+                                logging.info('Uploaded %s' % ele)
                             os.remove(ele)
                         except Exception as e:
-                            self.log.error(str(e))
+                            logging.error(str(e))
                             break
 
     def check_quota(self):
-        self.log.info("Checking quota of Dropbox")
+        logging.info("Checking quota of Dropbox")
         while True:
             info = self.client.account_info()
-            self.log.info("Current Quota {0}".format(info['quota_info']['quota']-info['quota_info']['normal']))
+            logging.info("Current Quota {0}".format(info['quota_info']['quota']-info['quota_info']['normal']))
             if (info['quota_info']['quota']-info['quota_info']['normal']) < 10000000:
-                self.log.info("Not enough space");
+                logging.info("Not enough space");
                 folder_metadata = self.client.metadata('/')
-                self.log.info("Removing some files for space {0}".format(folder_metadata['contents'][0]['path']))
+                logging.info("Removing some files for space {0}".format(folder_metadata['contents'][0]['path']))
                 self.client.file_delete(folder_metadata['contents'][0]['path'])
             else:
-                self.log.info("Check quota Okay!");
+                logging.info("Check quota Okay!");
                 break
