@@ -8,6 +8,7 @@ import numpy as np
 import cv2
 import logging
 import traceback
+import cv
 class Camera(threading.Thread):
 
 
@@ -52,3 +53,5 @@ class Camera(threading.Thread):
 
     def process_image(self, data):
         img = np.array(data,dtype=np.uint16).reshape((Config.FFMPEG_FRAME_WIDTH,Config.FFMPEG_FRAME_HEIGHT))
+        img = cv2.cvtColor(img,cv.CV_YCrCb2BGR)
+        cv2.imwrite("/tmp/1.jpg",img)
