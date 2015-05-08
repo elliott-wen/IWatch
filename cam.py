@@ -47,6 +47,7 @@ class Camera(threading.Thread):
                     self.process_image(clip)
 
         except:
+            traceback.print_exc()
             self.runFlag = False
             logging.error("Something wrong with the camera socket!")
         logging.info("Camera Thread stops!")
