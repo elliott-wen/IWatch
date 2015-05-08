@@ -3,6 +3,7 @@ from ffmpeg import FFMPEG_Watchdog
 import logging
 import time
 import os
+from storage import DropboxStorage
 def main():
     logging.basicConfig(level = logging.INFO, format = '%(asctime)s - %(levelname)s: %(message)s')
     cam = Camera()
@@ -10,6 +11,8 @@ def main():
     watchdog = FFMPEG_Watchdog()
     watchdog.kill_ffmpeg()
     watchdog.start_ffmpeg()
+    store = DropboxStorage()
+    store.start_uploader()
     time.sleep(1)
     runFlag = True
     try:
@@ -22,6 +25,7 @@ def main():
     finally:
         watchdog.kill_ffmpeg()
         cam.stop_camera()
+        store.stop_uploader()
         logging.info("Ready to shutdown!")
         os._exit(-1)
 
