@@ -21,9 +21,7 @@ class FFMPEG_Watchdog(threading.Thread):
         self.start()
 
     def run(self):
-
-
         logging.info("Starting FFMPEG")
-        subprocess32.call(Config.command)
+        subprocess.call(Config.command)
         logging.info("FFMPEG ends!")
 
