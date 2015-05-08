@@ -37,7 +37,7 @@ class DropboxStorage(threading.Thread):
                     self.check_quota()
                     logging.info('Ready to upload file %s' % ele)
                     uf = open(ele,'rb')
-                    fcntl.lockf(uf,fcntl.LOCK_EX)
+                    fcntl.flock(uf,fcntl.LOCK_EX)
                     success = False
                     try:
                         self.client.put_file(remote_name,file)

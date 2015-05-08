@@ -35,8 +35,8 @@
       <file leaf-file-name="storage.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/storage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9351536" vertical-offset="421" max-vertical-offset="1349">
-              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5460751" vertical-offset="421" max-vertical-offset="1349">
+              <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -444,12 +444,6 @@
       <option name="number" value="Default" />
       <updated>1429705242307</updated>
     </task>
-    <task id="LOCAL-00010" summary="Fix a bug">
-      <created>1430921579796</created>
-      <option name="number" value="00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1430921579796</updated>
-    </task>
     <task id="LOCAL-00011" summary="Fix a bug">
       <created>1430922027682</created>
       <option name="number" value="00011" />
@@ -738,7 +732,13 @@
       <option name="project" value="LOCAL" />
       <updated>1431090778829</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="debugging">
+      <created>1431090972178</created>
+      <option name="number" value="00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1431090972178</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1143,8 +1143,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/storage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9351536" vertical-offset="421" max-vertical-offset="1349">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5460751" vertical-offset="421" max-vertical-offset="1349">
+          <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>
