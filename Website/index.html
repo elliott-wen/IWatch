@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<script type="text/javascript" src="jwplayer.js"></script>
+<style>
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+<div id="container">Loading the player ...</div>
+<script>
+jwplayer("container").setup({
+    file: "rtmp://158.132.10.136:25009/webcam/flv:live.flv",
+    height: 480,
+    width: 640
+});
+</script>
+
+
+</body>
+</html>
