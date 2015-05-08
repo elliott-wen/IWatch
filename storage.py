@@ -3,6 +3,7 @@ import dropbox
 import logging
 import time
 import os
+import fcntl
 from config import Config
 
 class DropboxStorage(threading.Thread):
@@ -26,25 +27,28 @@ class DropboxStorage(threading.Thread):
 
     def run(self):
         while self.is_working:
-            time.sleep(1)
+            time.sleep(5)
             files = os.listdir(Config.STORAGE_PATH)
             for ele in files:
                 if '.flv' in ele:
+                    remote_name = ele
                     ele = "%s/%s"%(Config.STORAGE_PATH,ele)
                     logging.info("Trying to upload file %s!"%(ele))
-                    if os.access(ele,os.W_OK):
-                        self.check_quota()
-                        logging.info('Ready to upload file %s' % ele)
-                        try:
-                            with open(ele,'rb') as file:
-                                self.client.put_file(ele,file)
-                                logging.info('Uploaded %s' % ele)
-                            os.remove(ele)
-                        except Exception as e:
-                            logging.error(str(e))
-                            break
-                    else:
-                        logging.info("Failed to get lock!")
+                    self.check_quota()
+                    logging.info('Ready to upload file %s' % ele)
+                    uf = open(ele,'rb')
+                    fcntl.lockf(uf,fcntl.LOCK_EX)
+                    success = False
+                    try:
+                        self.client.put_file(remote_name,file)
+                        success = True
+                    except Exception as e:
+                        logging.error("Upable to upload %s due to network error %s!"%(ele,str(e)))
+                    fcntl.lockf(uf,fcntl.LOCK_UN)
+                    uf.close()
+                    if success:
+                        os.remove(ele)
+                        logging.info("Removing %s"%(ele))
 
     def check_quota(self):
         logging.info("Checking quota of Dropbox")
