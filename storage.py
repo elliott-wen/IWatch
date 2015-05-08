@@ -31,7 +31,7 @@ class DropboxStorage(threading.Thread):
             for ele in files:
                 if '.flv' in ele:
                     logging.info("Trying to upload file %s!"%(ele))
-                    if os.access(ele,os.R_OK|os.W_OK):
+                    if os.access(ele,os.W_OK):
                         self.check_quota()
                         logging.info('Ready to upload file %s' % ele)
                         try:
@@ -42,6 +42,8 @@ class DropboxStorage(threading.Thread):
                         except Exception as e:
                             logging.error(str(e))
                             break
+                    else:
+                        logging.info("Failed to get lock!")
 
     def check_quota(self):
         logging.info("Checking quota of Dropbox")
