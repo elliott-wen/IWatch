@@ -12,3 +12,5 @@ class Config():
                         '-map','0:0','-map','1:0','-r','15','-f','flv',FFMPEG_RTMP_OUTPUT,
                         '-map','0:0','-f','rawvideo','-r','1','-pix_fmts','gray','unix://'+ CAMERA_SOCKET
                         ]
+     DROPBOX_TOKEN = "BsL3s6RgiocAAAAAAAATX7fOo_7xgmVBAADwk1fQtjcAg7gKj8DjsN5aJ61121zX"
+     STORAGE_PATH = '/record'

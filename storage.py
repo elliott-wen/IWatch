@@ -3,13 +3,14 @@ import dropbox
 import logging
 import time
 import os
+from config import Config
 
 class DropboxStorage(threading.Thread):
 
-    def __init__(self,access_token):
+    def __init__(self):
         super(DropboxStorage,self).__init__(name = 'Dropbox-Thread')
         self.is_working = False
-        self.access_token = access_token
+        self.access_token = Config.DROPBOX_TOKEN
         self.client = dropbox.client.DropboxClient(self.access_token)
         logging.info('Login Dropbox! %s'%self.client.account_info())
 
@@ -26,11 +27,10 @@ class DropboxStorage(threading.Thread):
     def run(self):
         while self.is_working:
             time.sleep(1)
-            files = os.listdir('.')
+            files = os.listdir(Config.STORAGE_PATH)
             for ele in files:
-                if '.mp4' in ele:
-                    if not 'temp' in ele:
-
+                if '.flv' in ele:
+                    if os.access(ele,os.R_OK|os.W_OK):
                         self.check_quota()
                         self.log.info('Ready to upload file %s' % ele)
                         try:
