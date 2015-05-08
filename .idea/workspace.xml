@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9f024b59-8c3a-43a2-853d-4e8c6421c57e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cam.py" afterPath="$PROJECT_DIR$/cam.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.py" afterPath="$PROJECT_DIR$/config.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ffmpeg.py" afterPath="$PROJECT_DIR$/ffmpeg.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DASS.iws" />
@@ -78,8 +78,8 @@
       <file leaf-file-name="ffmpeg.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ffmpeg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
-              <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="82" max-vertical-offset="665">
+              <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -90,8 +90,8 @@
       <file leaf-file-name="cam.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cam.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8696398" vertical-offset="538" max-vertical-offset="1197">
-              <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="56" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.8044597" vertical-offset="595" max-vertical-offset="1178">
+              <caret line="56" column="37" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
               <folding>
                 <element signature="e#2#15#0" expanded="true" />
               </folding>
@@ -122,11 +122,11 @@
         <option value="$PROJECT_DIR$/storage.py" />
         <option value="$PROJECT_DIR$/readme" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/ffmpeg.py" />
         <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/cam.py" />
+        <option value="$PROJECT_DIR$/ffmpeg.py" />
       </list>
     </option>
   </component>
@@ -700,7 +700,13 @@
       <option name="project" value="LOCAL" />
       <updated>1431078034316</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="debugging">
+      <created>1431078750150</created>
+      <option name="number" value="00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1431078750150</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1057,8 +1063,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ffmpeg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
-          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="82" max-vertical-offset="665">
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>
@@ -1067,8 +1073,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cam.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8696398" vertical-offset="538" max-vertical-offset="1197">
-          <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="56" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.8044597" vertical-offset="595" max-vertical-offset="1178">
+          <caret line="56" column="37" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
           <folding>
             <element signature="e#2#15#0" expanded="true" />
           </folding>

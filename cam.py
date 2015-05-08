@@ -53,6 +53,5 @@ class Camera(threading.Thread):
         logging.info("Camera Thread stops!")
 
     def process_image(self, data):
-        print(len(data))
         img = np.frombuffer(data,dtype=np.uint8,count=Config.FFMPEG_FRAME_HEIGHT*Config.FFMPEG_FRAME_WIDTH).reshape((Config.FFMPEG_FRAME_HEIGHT,Config.FFMPEG_FRAME_WIDTH))
         cv2.imwrite("/tmp/1.jpg",img)
