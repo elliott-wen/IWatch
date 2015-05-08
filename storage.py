@@ -44,7 +44,7 @@ class DropboxStorage(threading.Thread):
                         success = True
                     except Exception as e:
                         logging.error("Upable to upload %s due to network error %s!"%(ele,str(e)))
-                    fcntl.lockf(uf,fcntl.LOCK_UN)
+                    fcntl.flock(uf,fcntl.LOCK_UN)
                     uf.close()
                     if success:
                         os.remove(ele)
