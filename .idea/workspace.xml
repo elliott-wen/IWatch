@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f024b59-8c3a-43a2-853d-4e8c6421c57e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage.py" afterPath="$PROJECT_DIR$/storage.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DASS.iws" />
@@ -444,12 +443,6 @@
       <option name="number" value="Default" />
       <updated>1429705242307</updated>
     </task>
-    <task id="LOCAL-00011" summary="Fix a bug">
-      <created>1430922027682</created>
-      <option name="number" value="00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1430922027683</updated>
-    </task>
     <task id="LOCAL-00012" summary="Fix a bug">
       <created>1430922041791</created>
       <option name="number" value="00012" />
@@ -738,7 +731,13 @@
       <option name="project" value="LOCAL" />
       <updated>1431090972178</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="debugging">
+      <created>1431091018066</created>
+      <option name="number" value="00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1431091018066</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="ToolWindowManager">
