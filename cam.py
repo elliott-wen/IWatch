@@ -4,6 +4,7 @@ import socket
 import os
 from config import Config
 import threading
+import cv2
 import logging
 class Camera(threading.Thread):
 
@@ -30,13 +31,20 @@ class Camera(threading.Thread):
     def run(self):
         conn, addr = self.camera_socket.accept()
         try:
-            while(self.runFlag):
+            buffer_t = []
+            while self.runFlag:
                 data = conn.recv(1024000)
-                if(len(data) == 0):
-                    logging.info("FFMPEG closes the conncection!")
-                    break;
-                print(len(data))
+                buffer_t += data
+                while len(buffer_t) >= Config.FFMPEG_PERFRAME_SIZE:
+                    clip = buffer_t[:Config.FFMPEG_PERFRAME_SIZE]
+                    buffer_t = buffer_t[Config.FFMPEG_PERFRAME_SIZE:]
+                    self.process_image(clip)
+
         except:
             self.runFlag = False
             logging.error("Something wrong with the camera socket!")
         logging.info("Camera Thread stops!")
+
+    def process_image(self, data):
+        grayImage = cv2.cvtColor(data,cv2.COLOR_YUV2GRAY_420)
+        cv2.imwrite('/tmp/test.jpg,',grayImage)
