@@ -54,6 +54,6 @@ class Camera(threading.Thread):
 
     def process_image(self, data):
         print(len(data))
-        img = np.array(data, dtype=np.uint64).reshape((Config.FFMPEG_FRAME_WIDTH,Config.FFMPEG_FRAME_HEIGHT))
+        img = np.frombuffer(data,dtype=np.uint16,count=Config.FFMPEG_FRAME_HEIGHT*Config.FFMPEG_FRAME_WIDTH).reshape((Config.FFMPEG_FRAME_HEIGHT,Config.FFMPEG_FRAME_WIDTH))
         img = cv2.cvtColor(img,cv.CV_YCrCb2BGR)
         cv2.imwrite("/tmp/1.jpg",img)
