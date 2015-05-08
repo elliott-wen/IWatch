@@ -49,5 +49,7 @@ class Camera(threading.Thread):
         logging.info("Camera Thread stops!")
 
     def process_image(self, data):
+        image = cv.CreateMat(Config.FFMPEG_FRAME_WIDTH,Config.FFMPEG_FRAME_HEIGHT,cv.CV_8UC2)
+        cv.SetData(image,data)
         grayImage = cv2.cvtColor(data,cv.CV_YCrCb2BGR)
         cv2.imwrite('/tmp/test.jpg,',grayImage)
