@@ -6,6 +6,7 @@ from config import Config
 import threading
 import cv2
 import logging
+import traceback
 class Camera(threading.Thread):
 
 
@@ -41,10 +42,12 @@ class Camera(threading.Thread):
                     self.process_image(clip)
 
         except:
+            traceback.print_exc()
             self.runFlag = False
             logging.error("Something wrong with the camera socket!")
         logging.info("Camera Thread stops!")
 
     def process_image(self, data):
+
         grayImage = cv2.cvtColor(data,cv2.COLOR_YUV2GRAY_420)
         cv2.imwrite('/tmp/test.jpg,',grayImage)
