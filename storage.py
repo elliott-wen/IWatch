@@ -36,15 +36,15 @@ class DropboxStorage(threading.Thread):
                     logging.info("Trying to upload file %s!"%(ele))
                     self.check_quota()
                     logging.info('Ready to upload file %s' % ele)
-                    uf = open(ele,'rb')
-                    fcntl.flock(uf,fcntl.LOCK_EX)
+                    uf = open(ele,'r+a')
+                    fcntl.lockf(uf,fcntl.LOCK_EX)
                     success = False
                     try:
                         self.client.put_file(remote_name,uf)
                         success = True
                     except Exception as e:
                         logging.error("Upable to upload %s due to network error %s!"%(ele,str(e)))
-                    fcntl.flock(uf,fcntl.LOCK_UN)
+                    fcntl.lockf(uf,fcntl.LOCK_UN)
                     uf.close()
                     if success:
                         os.remove(ele)
