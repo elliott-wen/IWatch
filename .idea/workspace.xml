@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f024b59-8c3a-43a2-853d-4e8c6421c57e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage.py" afterPath="$PROJECT_DIR$/storage.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cam.py" afterPath="$PROJECT_DIR$/cam.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DASS.iws" />
@@ -32,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="storage.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="storage.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/storage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4165067" vertical-offset="391" max-vertical-offset="1216">
-              <caret line="32" column="65" selection-start-line="32" selection-start-column="65" selection-end-line="32" selection-end-column="65" />
+            <state vertical-scroll-proportion="-6.5538464" vertical-offset="391" max-vertical-offset="1216">
+              <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -76,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cam.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="cam.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cam.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="584" max-vertical-offset="1197">
-              <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.26791808" vertical-offset="584" max-vertical-offset="1197">
+              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding>
                 <element signature="e#2#15#0" expanded="true" />
               </folding>
@@ -114,8 +114,8 @@
         <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/ffmpeg.py" />
         <option value="$PROJECT_DIR$/config.py" />
-        <option value="$PROJECT_DIR$/cam.py" />
         <option value="$PROJECT_DIR$/storage.py" />
+        <option value="$PROJECT_DIR$/cam.py" />
       </list>
     </option>
   </component>
@@ -167,38 +167,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="DASS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DASS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DASS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DASS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DASS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DASS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Nginx" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -470,12 +438,6 @@
       <created>1429705242307</created>
       <option name="number" value="Default" />
       <updated>1429705242307</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Fix a bug">
-      <created>1430921132608</created>
-      <option name="number" value="00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1430921132608</updated>
     </task>
     <task id="LOCAL-00006" summary="Fix a bug">
       <created>1430921224916</created>
@@ -765,7 +727,13 @@
       <option name="project" value="LOCAL" />
       <updated>1431087086323</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="debugging">
+      <created>1431087183430</created>
+      <option name="number" value="00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1431087183430</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1086,6 +1054,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/storage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5538464" vertical-offset="391" max-vertical-offset="1216">
+          <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ffmpeg.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="665">
@@ -1106,20 +1084,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cam.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="584" max-vertical-offset="1197">
-          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.26791808" vertical-offset="584" max-vertical-offset="1197">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <element signature="e#2#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4165067" vertical-offset="391" max-vertical-offset="1216">
-          <caret line="32" column="65" selection-start-line="32" selection-start-column="65" selection-end-line="32" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
           </folding>
         </state>
       </provider>

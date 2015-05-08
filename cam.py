@@ -37,7 +37,7 @@ class Camera(threading.Thread):
             buffer_t = ""
             while self.runFlag:
                 data = conn.recv(1024000)
-                print(len(data))
+
                 if(len(data) == 0):
                     logging.info("Client close socket!")
                     break
