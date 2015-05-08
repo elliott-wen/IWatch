@@ -30,6 +30,7 @@ class DropboxStorage(threading.Thread):
             files = os.listdir(Config.STORAGE_PATH)
             for ele in files:
                 if '.flv' in ele:
+                    logging.info("Trying to upload file %s!"%(ele))
                     if os.access(ele,os.R_OK|os.W_OK):
                         self.check_quota()
                         logging.info('Ready to upload file %s' % ele)
