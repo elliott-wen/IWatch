@@ -36,6 +36,9 @@ class Camera(threading.Thread):
             buffer_t = []
             while self.runFlag:
                 data = conn.recv(1024000)
+                if(len(data) == 0):
+                    logging.info("Client close socket!")
+                    break
                 buffer_t += data
                 while len(buffer_t) >= Config.FFMPEG_PERFRAME_SIZE:
                     clip = buffer_t[:Config.FFMPEG_PERFRAME_SIZE]
@@ -43,10 +46,9 @@ class Camera(threading.Thread):
                     self.process_image(clip)
 
         except:
-            traceback.print_exc()
             self.runFlag = False
             logging.error("Something wrong with the camera socket!")
         logging.info("Camera Thread stops!")
 
     def process_image(self, data):
-        pass
+        img = np.array(data,dtype=np.uint16).reshape((Config.FFMPEG_FRAME_WIDTH,Config.FFMPEG_FRAME_HEIGHT))
