@@ -15,7 +15,7 @@ def main():
     try:
         while runFlag:
             time.sleep(1)
-            if(cam.isAlive() == False or watchdog.isAlive()):
+            if(cam.isAlive() == False or watchdog.isAlive() == False):
                 break
     except:
         pass
