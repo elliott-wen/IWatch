@@ -16,6 +16,7 @@ class Camera(threading.Thread):
         super(Camera,self).__init__(name="Camera Thread")
         self.camera_socket = None
         self.runFlag = False
+        self.lastImg = None
 
     def open_camera(self):
         self.camera_socket = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
@@ -55,3 +56,14 @@ class Camera(threading.Thread):
 
     def process_image(self, data):
         img = np.frombuffer(data,dtype=np.uint8,count=Config.FFMPEG_FRAME_HEIGHT*Config.FFMPEG_FRAME_WIDTH).reshape((Config.FFMPEG_FRAME_HEIGHT,Config.FFMPEG_FRAME_WIDTH))
+        self.detect_motion(img)
+        self.detect_motion(img)
+
+    def detect_motion(self,img):
+        if self.lastImg == None:
+            self.lastImg = img
+            return False
+        diff = self.lastImg - img
+        print(np.linalg.norm(diff))
+        self.lastImg = img
+        return False
