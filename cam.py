@@ -8,7 +8,14 @@ import numpy as np
 import cv2
 import logging
 import traceback
-import cv
+import time
+
+class CameraSendMessageThread(threading.Thread):
+    def __init__(self):
+        super(CameraSendMessageThread,self).__init__(name="Camera Thread")
+
+
+
 class Camera(threading.Thread):
 
 
@@ -17,7 +24,7 @@ class Camera(threading.Thread):
         self.camera_socket = None
         self.runFlag = False
         self.lastImg = None
-
+        self.lastMessageTime = time.time()
     def open_camera(self):
         self.camera_socket = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
         try:
@@ -56,18 +63,23 @@ class Camera(threading.Thread):
 
     def process_image(self, data):
         img = np.frombuffer(data,dtype=np.uint8,count=Config.FFMPEG_FRAME_HEIGHT*Config.FFMPEG_FRAME_WIDTH).reshape((Config.FFMPEG_FRAME_HEIGHT,Config.FFMPEG_FRAME_WIDTH))
-        self.detect_motion(img)
+        r = self.detect_motion(img)
+        if r:
+            pass
 
     def detect_motion(self,img):
         if self.lastImg is None:
             self.lastImg = img
             return False
         diff = cv2.absdiff(self.lastImg,img)
+        self.lastImg = img
         kernel = np.ones((5,5),np.uint8)
         diff = cv2.medianBlur(diff,5)
         diff = cv2.morphologyEx(diff, cv2.MORPH_OPEN, kernel)
         diff = cv2.morphologyEx(diff, cv2.MORPH_CLOSE, kernel)
         diff = cv2.threshold(diff,10,255,cv2.THRESH_BINARY)
-        print(cv2.sumElems(diff[1]))
-        self.lastImg = img
+        r=(cv2.sumElems(diff[1]))[0]
+        if r > Config.DETECTION_THRESHOLD:
+            print("Detected!")
+            return True
         return False

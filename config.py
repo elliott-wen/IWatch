@@ -14,3 +14,5 @@ class Config():
                         ]
      DROPBOX_TOKEN = "BsL3s6RgiocAAAAAAAATX7fOo_7xgmVBAADwk1fQtjcAg7gKj8DjsN5aJ61121zX"
      STORAGE_PATH = '/record'
+     DETECTION_THRESHOLD = 400000
+     DETECTION_INTERVAL = 1800
