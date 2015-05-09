@@ -68,6 +68,6 @@ class Camera(threading.Thread):
         diff = cv2.morphologyEx(diff, cv2.MORPH_OPEN, kernel)
         diff = cv2.morphologyEx(diff, cv2.MORPH_CLOSE, kernel)
         diff = cv2.threshold(diff,10,255,cv2.THRESH_BINARY)
-        print(diff)
+        print(cv2.sumElems(diff[1]))
         self.lastImg = img
         return False
