@@ -81,8 +81,8 @@
       <file leaf-file-name="cam.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cam.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61007464" vertical-offset="775" max-vertical-offset="1387">
-              <caret line="58" column="31" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.9291045" vertical-offset="870" max-vertical-offset="1482">
+              <caret line="72" column="20" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
               <folding>
                 <element signature="e#2#15#0" expanded="true" />
               </folding>
@@ -447,12 +447,6 @@
       <option name="number" value="Default" />
       <updated>1429705242307</updated>
     </task>
-    <task id="LOCAL-00016" summary="debugging">
-      <created>1430922545603</created>
-      <option name="number" value="00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1430922545603</updated>
-    </task>
     <task id="LOCAL-00017" summary="debugging">
       <created>1430922817161</created>
       <option name="number" value="00017" />
@@ -741,7 +735,13 @@
       <option name="project" value="LOCAL" />
       <updated>1431160542358</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="debugging">
+      <created>1431161011007</created>
+      <option name="number" value="00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1431161011007</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1222,8 +1222,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cam.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61007464" vertical-offset="775" max-vertical-offset="1387">
-          <caret line="58" column="31" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.9291045" vertical-offset="870" max-vertical-offset="1482">
+          <caret line="72" column="20" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
           <folding>
             <element signature="e#2#15#0" expanded="true" />
           </folding>
