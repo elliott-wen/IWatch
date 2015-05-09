@@ -65,9 +65,9 @@ class Camera(threading.Thread):
         diff = cv2.absdiff(self.lastImg,img)
         kernel = np.ones((5,5),np.uint8)
         diff = cv2.medianBlur(diff,5)
-        diff = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel)
-        diff = cv2.morphologyEx(img, cv2.MORPH_CLOSE, kernel)
+        diff = cv2.morphologyEx(diff, cv2.MORPH_OPEN, kernel)
+        diff = cv2.morphologyEx(diff, cv2.MORPH_CLOSE, kernel)
         diff = cv2.threshold(diff,10,255,cv2.THRESH_BINARY)
-        print(cv2.norm(diff))
+        cv2.norm(diff)
         self.lastImg = img
         return False

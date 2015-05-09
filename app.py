@@ -27,6 +27,7 @@ def main():
         cam.stop_camera()
         store.stop_uploader()
         logging.info("Ready to shutdown!")
+        time.sleep(10)
         os._exit(-1)
 
 if __name__ == '__main__':
