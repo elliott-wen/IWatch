@@ -59,7 +59,7 @@ class Camera(threading.Thread):
         self.detect_motion(img)
 
     def detect_motion(self,img):
-        if not self.lastImg:
+        if self.lastImg is None:
             self.lastImg = img
             return False
         diff = cv2.absdiff(self.lastImg,img)
