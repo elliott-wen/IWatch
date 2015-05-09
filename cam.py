@@ -59,7 +59,7 @@ class Camera(threading.Thread):
         self.detect_motion(img)
 
     def detect_motion(self,img):
-        if self.lastImg == None:
+        if self.lastImg:
             self.lastImg = img
             return False
         diff = cv2.absdiff(self.lastImg,img)
@@ -68,6 +68,6 @@ class Camera(threading.Thread):
         diff = cv2.morphologyEx(diff, cv2.MORPH_OPEN, kernel)
         diff = cv2.morphologyEx(diff, cv2.MORPH_CLOSE, kernel)
         diff = cv2.threshold(diff,10,255,cv2.THRESH_BINARY)
-
+        print(diff)
         self.lastImg = img
         return False
