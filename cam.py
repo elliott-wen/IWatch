@@ -57,7 +57,6 @@ class Camera(threading.Thread):
     def process_image(self, data):
         img = np.frombuffer(data,dtype=np.uint8,count=Config.FFMPEG_FRAME_HEIGHT*Config.FFMPEG_FRAME_WIDTH).reshape((Config.FFMPEG_FRAME_HEIGHT,Config.FFMPEG_FRAME_WIDTH))
         self.detect_motion(img)
-        self.detect_motion(img)
 
     def detect_motion(self,img):
         if self.lastImg == None:
