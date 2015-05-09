@@ -82,7 +82,7 @@
         <entry file="file://$PROJECT_DIR$/cam.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.85820895" vertical-offset="870" max-vertical-offset="1482">
-              <caret line="70" column="31" selection-start-line="70" selection-start-column="31" selection-end-line="70" selection-end-column="31" />
+              <caret line="70" column="18" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
               <folding>
                 <element signature="e#2#15#0" expanded="true" />
               </folding>
@@ -447,12 +447,6 @@
       <option name="number" value="Default" />
       <updated>1429705242307</updated>
     </task>
-    <task id="LOCAL-00024" summary="debugging">
-      <created>1431058109874</created>
-      <option name="number" value="00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1431058109874</updated>
-    </task>
     <task id="LOCAL-00025" summary="debugging">
       <created>1431058151952</created>
       <option name="number" value="00025" />
@@ -741,7 +735,13 @@
       <option name="project" value="LOCAL" />
       <updated>1431163271062</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="debugging">
+      <created>1431163388296</created>
+      <option name="number" value="00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1431163388296</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1223,7 +1223,7 @@
     <entry file="file://$PROJECT_DIR$/cam.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.85820895" vertical-offset="870" max-vertical-offset="1482">
-          <caret line="70" column="31" selection-start-line="70" selection-start-column="31" selection-end-line="70" selection-end-column="31" />
+          <caret line="70" column="18" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
           <folding>
             <element signature="e#2#15#0" expanded="true" />
           </folding>
