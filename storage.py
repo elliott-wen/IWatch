@@ -63,3 +63,12 @@ class DropboxStorage(threading.Thread):
             else:
                 logging.info("Check quota Okay!");
                 break
+
+
+class YoutubeStorage(threading.Thread):
+    def __init__(self):
+        super(DropboxStorage,self).__init__(name = 'Dropbox-Thread')
+        self.is_working = False
+        self.access_token = Config.DROPBOX_TOKEN
+        self.client = dropbox.client.DropboxClient(self.access_token)
+        logging.info('Login Dropbox! %s'%self.client.account_info())

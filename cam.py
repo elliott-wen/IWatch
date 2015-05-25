@@ -14,6 +14,8 @@ class CameraSendMessageThread(threading.Thread):
     def __init__(self):
         super(CameraSendMessageThread,self).__init__(name="Camera Thread")
 
+    def run(self):
+        pass
 
 
 class Camera(threading.Thread):
@@ -24,7 +26,8 @@ class Camera(threading.Thread):
         self.camera_socket = None
         self.runFlag = False
         self.lastImg = None
-        self.lastMessageTime = time.time()
+        self.lastMessageTime = 0
+        self.motionDetected = 0
     def open_camera(self):
         self.camera_socket = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
         try:
@@ -65,7 +68,12 @@ class Camera(threading.Thread):
         img = np.frombuffer(data,dtype=np.uint8,count=Config.FFMPEG_FRAME_HEIGHT*Config.FFMPEG_FRAME_WIDTH).reshape((Config.FFMPEG_FRAME_HEIGHT,Config.FFMPEG_FRAME_WIDTH))
         r = self.detect_motion(img)
         if r:
-            pass
+            self.motionDetected += 1
+            if(self.motionDetected>3 and time.time()-self.lastMessageTime>600):
+                self.lastMessageTime = time.time()
+
+        else:
+            self.motionDetected = 0
 
     def detect_motion(self,img):
         if self.lastImg is None:
@@ -80,6 +88,6 @@ class Camera(threading.Thread):
         diff = cv2.threshold(diff,10,255,cv2.THRESH_BINARY)
         r=(cv2.sumElems(diff[1]))[0]
         if r > Config.DETECTION_THRESHOLD:
-            print("Detected!")
+            logging.info("Motion Detected %d"%(self.motionDetected))
             return True
         return False
