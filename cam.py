@@ -17,7 +17,7 @@ class CameraSendMessageThread(threading.Thread):
 
     def run(self):
         pb = Pushbullet(Config.PUSHOVER_KEY)
-        with open(Config.PUSHOVER_KEY, "rb") as pic:
+        with open(Config.DETECTION_IMAGE, "rb") as pic:
             file_data = pb.upload_file(pic, "picture.jpg")
             push = pb.push_file(**file_data)
 
