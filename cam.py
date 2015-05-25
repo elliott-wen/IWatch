@@ -9,14 +9,17 @@ import cv2
 import logging
 import traceback
 import time
+from pushbullet import Pushbullet
 
 class CameraSendMessageThread(threading.Thread):
     def __init__(self):
         super(CameraSendMessageThread,self).__init__(name="Camera Thread")
 
     def run(self):
-        pass
-
+        pb = Pushbullet(Config.PUSHOVER_KEY)
+        with open(Config.PUSHOVER_KEY, "rb") as pic:
+            file_data = pb.upload_file(pic, "picture.jpg")
+            push = pb.push_file(**file_data)
 
 class Camera(threading.Thread):
 
@@ -69,9 +72,11 @@ class Camera(threading.Thread):
         r = self.detect_motion(img)
         if r:
             self.motionDetected += 1
-            if(self.motionDetected>3 and time.time()-self.lastMessageTime>600):
+            if(self.motionDetected>3 and time.time()-self.lastMessageTime>Config.DETECTION_INTERVAL):
                 self.lastMessageTime = time.time()
-
+                cv2.imwrite(Config.DETECTION_IMAGE,img)
+                thread = CameraSendMessageThread()
+                thread.start()
         else:
             self.motionDetected = 0
 
