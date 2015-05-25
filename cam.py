@@ -73,9 +73,11 @@ class Camera(threading.Thread):
         r = self.detect_motion(img)
         if r:
 
-            if time.time()-self.lastDetectedTime <  60:
+            if time.time()-self.lastDetectedTime <  120:
                 self.motionDetected += 1
-            if(self.motionDetected>3 and time.time()-self.lastMessageTime>Config.DETECTION_INTERVAL):
+            else:
+                self.motionDetected = 1
+            if(self.motionDetected>Config.DETECTION_SENSITITY and time.time()-self.lastMessageTime>Config.DETECTION_SENDMESSAGE_INTERVAL):
                 self.lastMessageTime = time.time()
                 self.motionDetected = 0
                 cv2.imwrite(Config.DETECTION_IMAGE,img)
