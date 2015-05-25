@@ -30,6 +30,7 @@ class Camera(threading.Thread):
         self.runFlag = False
         self.lastImg = None
         self.lastMessageTime = 0
+        self.lastDetectedTime = time.time()
         self.motionDetected = 0
     def open_camera(self):
         self.camera_socket = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
@@ -71,14 +72,16 @@ class Camera(threading.Thread):
         img = np.frombuffer(data,dtype=np.uint8,count=Config.FFMPEG_FRAME_HEIGHT*Config.FFMPEG_FRAME_WIDTH).reshape((Config.FFMPEG_FRAME_HEIGHT,Config.FFMPEG_FRAME_WIDTH))
         r = self.detect_motion(img)
         if r:
-            self.motionDetected += 1
+
+            if time.time()-self.lastDetectedTime <  60:
+                self.motionDetected += 1
             if(self.motionDetected>3 and time.time()-self.lastMessageTime>Config.DETECTION_INTERVAL):
                 self.lastMessageTime = time.time()
+                self.motionDetected = 0
                 cv2.imwrite(Config.DETECTION_IMAGE,img)
                 thread = CameraSendMessageThread()
                 thread.start()
-        else:
-            self.motionDetected = 0
+            self.lastDetectedTime = time.time()
 
     def detect_motion(self,img):
         if self.lastImg is None:
