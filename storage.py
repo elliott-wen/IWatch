@@ -22,8 +22,9 @@ class DropboxStorage(threading.Thread):
         super(DropboxStorage,self).__init__(name = 'Dropbox-Thread')
         self.is_working = False
         self.access_token = Config.DROPBOX_TOKEN
-        self.client = dropbox.client.DropboxClient(self.access_token)
-        logging.info('Login Dropbox! %s'%self.client.account_info())
+        self.client = None
+	#self.client = dropbox.client.DropboxClient(self.access_token)
+        #logging.info('Login Dropbox! %s'%self.client.account_info())
 
 
 
@@ -37,8 +38,10 @@ class DropboxStorage(threading.Thread):
 
     def run(self):
         while self.is_working:
-            time.sleep(5)
-            files = os.listdir(Config.STORAGE_PATH)
+            time.sleep(60)
+	    self.client = dropbox.client.DropboxClient(self.access_token)
+            logging.info('Login Dropbox! %s'%self.client.account_info())
+	    files = os.listdir(Config.STORAGE_PATH)
             for ele in files:
                 if '.flv' in ele:
                     remote_name = ele
