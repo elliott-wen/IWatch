@@ -6,7 +6,7 @@ class Config():
      FFMPEG_FRAME_WIDTH = 640
      FFMPEG_FRAME_HEIGHT = 480
      FFMPEG_COMMAND  = [FFMPEG_BIN,
-                        "-f", 'v4l2', '-framerate', '15', '-video_size', '640*480', '-g,', '30', '-i','/dev/video0',
+                        "-f", 'v4l2', '-framerate', '15', '-video_size', '640*480', '-g', '30', '-i','/dev/video0',
                         '-ac','1','-f','alsa','-i','hw:1',
                         '-ar','22050',
                         '-map','0:0','-map','1:0','-vcodec','h264_omx', '-f','flv',FFMPEG_RTMP_OUTPUT,
