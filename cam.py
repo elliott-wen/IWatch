@@ -9,17 +9,28 @@ import cv2
 import logging
 import traceback
 import time
-from pushbullet import Pushbullet
+
+import smtplib
+from email.mime.image import MIMEImage
+from email.mime.multipart import MIMEMultipart
 
 class CameraSendMessageThread(threading.Thread):
     def __init__(self):
-        super(CameraSendMessageThread,self).__init__(name="Camera Thread")
+        super(CameraSendMessageThread,self).__init__(name="Camera Send Thread")
 
     def run(self):
-        pb = Pushbullet(Config.PUSHOVER_KEY)
+        msg = MIMEMultipart()
+        msg['Subject'] = 'Action Detected'
+        msg['From'] = Config.MAIL_ACCOUNT
+
         with open(Config.DETECTION_IMAGE, "rb") as pic:
-            file_data = pb.upload_file(pic, "picture.jpg")
-            push = pb.push_file(**file_data)
+            img = MIMEImage(pic.read())
+            msg.attach(img)
+        s = smtplib.SMTP()
+        s.connect(Config.MAIL_SERVER)
+        s.login(Config.MAIL_ACCOUNT, Config.MAIL_PASSWORD)
+        s.sendmail(Config.MAIL_ACCOUNT, Config.NOTIFY_MAIL_ACCOUNT, msg.as_string())
+
 
 class Camera(threading.Thread):
 

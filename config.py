@@ -16,7 +16,11 @@ class Config():
 
      DETECTION_IMAGE = '/tmp/detection.jpg'
      DETECTION_THRESHOLD = 500000
-     DETECTION_SENDMESSAGE_INTERVAL = 1800
-     DETECTION_SENSITITY = 7
-     PUSHOVER_KEY = 'o.URxebPpEbLw7HSIwAbJZPHyJCQ4iKItB'
+     DETECTION_SENDMESSAGE_INTERVAL = 300
+     DETECTION_SENSITITY = 14
+
+     MAIL_ACCOUNT = "hellomimi55@126.com"
+     MAIL_SERVER = "smtp.126.com"
+     MAIL_PASSWORD = "huangguiying"
+     NOTIFY_MAIL_ACCOUNT = "jq.elliott.wen@gmail.com;gy.victoria.huang@gmail.com"
 
