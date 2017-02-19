@@ -70,18 +70,18 @@ class Camera(threading.Thread):
 
     def process_image(self, data):
         img = np.frombuffer(data,dtype=np.uint8,count=Config.FFMPEG_FRAME_HEIGHT*Config.FFMPEG_FRAME_WIDTH).reshape((Config.FFMPEG_FRAME_HEIGHT,Config.FFMPEG_FRAME_WIDTH))
-        cv2.imwrite(Config.HTTP_IMAGE,img)
-	r = self.detect_motion(img)
+        r = self.detect_motion(img)
         if r:
 
             if time.time()-self.lastDetectedTime <  30:
                 self.motionDetected += 1
             else:
                 self.motionDetected = 1
-            if(self.motionDetected>Config.DETECTION_SENSITITY and time.time()-self.lastMessageTime>Config.DETECTION_SENDMESSAGE_INTERVAL):
+
+            if(self.motionDetected > Config.DETECTION_SENSITITY and time.time()-self.lastMessageTime>Config.DETECTION_SENDMESSAGE_INTERVAL):
                 self.lastMessageTime = time.time()
                 self.motionDetected = 0
-                cv2.imwrite(Config.DETECTION_IMAGE,img)
+                cv2.imwrite(Config.DETECTION_IMAGE, img)
                 thread = CameraSendMessageThread()
                 thread.start()
             self.lastDetectedTime = time.time()
