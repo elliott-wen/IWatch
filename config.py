@@ -22,5 +22,5 @@ class Config():
      MAIL_ACCOUNT = "hellomimi55@126.com"
      MAIL_SERVER = "smtp.126.com"
      MAIL_PASSWORD = "huangguiying"
-     NOTIFY_MAIL_ACCOUNT = "jq.elliott.wen@gmail.com;gy.victoria.huang@gmail.com"
+     NOTIFY_MAIL_ACCOUNT = ["jq.elliott.wen@gmail.com", "gy.victoria.huang@gmail.com"]
 

@@ -22,7 +22,7 @@ class CameraSendMessageThread(threading.Thread):
         msg = MIMEMultipart()
         msg['Subject'] = 'Action Detected'
         msg['From'] = Config.MAIL_ACCOUNT
-
+        msg['to'] = ", ".join(Config.NOTIFY_MAIL_ACCOUNT)
         with open(Config.DETECTION_IMAGE, "rb") as pic:
             img = MIMEImage(pic.read())
             msg.attach(img)
@@ -93,6 +93,7 @@ class Camera(threading.Thread):
                 self.lastMessageTime = time.time()
                 self.motionDetected = 0
                 cv2.imwrite(Config.DETECTION_IMAGE, img)
+                logging.info("Start up a mail thread to send image!")
                 thread = CameraSendMessageThread()
                 thread.start()
             self.lastDetectedTime = time.time()
