@@ -17,11 +17,9 @@ def main():
     runFlag = True
     try:
         while runFlag:
-            time.sleep(1)
-            if(cam.isAlive() == False or watchdog.isAlive() == False):
-                break
+            time.sleep(10)
     except:
-        pass
+        runFlag = False
     finally:
         watchdog.kill_ffmpeg()
         cam.stop_camera()
