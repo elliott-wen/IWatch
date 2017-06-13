@@ -30,9 +30,10 @@ class CameraSendMessageThread(threading.Thread):
         s.connect(Config.MAIL_SERVER)
         s.login(Config.MAIL_ACCOUNT, Config.MAIL_PASSWORD)
         s.sendmail(Config.MAIL_ACCOUNT, Config.NOTIFY_MAIL_ACCOUNT, msg.as_string())
+        s.quit()
 
 
-class Camera(threading.Thread):
+class CameraMotionDetector(threading.Thread):
 
 
     def __init__(self):

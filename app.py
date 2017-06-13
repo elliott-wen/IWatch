@@ -1,4 +1,4 @@
-from cam import Camera
+from cam import CameraMotionDetector
 from ffmpeg import FFMPEG_Watchdog
 import logging
 import time
@@ -6,20 +6,16 @@ import os
 # from storage import DropboxStorage
 def main():
     logging.basicConfig(level = logging.INFO, format = '%(asctime)s - %(levelname)s: %(message)s')
-    cam = Camera()
+    cam = CameraMotionDetector()
     cam.open_camera()
     watchdog = FFMPEG_Watchdog()
     watchdog.kill_ffmpeg()
     watchdog.start_ffmpeg()
-    # store = DropboxStorage()
-    # store.start_uploader()
-    time.sleep(1)
-    runFlag = True
+    
     try:
-        while runFlag:
-            time.sleep(5)
+        watchdog.join();
     except:
-        runFlag = False
+        pass
     finally:
         watchdog.kill_ffmpeg()
         cam.stop_camera()
