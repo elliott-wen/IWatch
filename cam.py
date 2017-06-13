@@ -37,7 +37,7 @@ class CameraMotionDetector(threading.Thread):
 
 
     def __init__(self):
-        super(Camera,self).__init__(name="Camera Thread")
+        super(CameraMotionDetector,self).__init__(name="Camera Thread")
         self.camera_socket = None
         self.runFlag = False
         self.lastImg = None
